@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<section class="about">
+
+<div class="about-img">
+<img src="{{ url_for('static',filename='images/profile.png') }}">
+</div>
+
+<div class="about-text">
+
+<h1>About Me</h1>
+
+<p>
+
+Hi, I'm <b>Amir Khan</b>, an MIS Executive and aspiring Data Analyst with experience in Excel, SQL, Power BI, Python, and Automation.
+
+I enjoy building dashboards, automating reports, and solving business problems using data.
+
+</p>
+
+<div class="info">
+
+<div><strong>Name:</strong> Amir Khan</div>
+
+<div><strong>Role:</strong> Data Analyst</div>
+
+<div><strong>Location:</strong> Gurugram, India</div>
+
+<div><strong>Email:</strong> your@email.com</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

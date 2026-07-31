@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Home
+
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h4>Hello, I'm</h4>
+
+<h1>Amir Khan</h1>
+
+<h2>Data Engineer | Data Analyst | Python Developer | MIS Executive</h2>
+
+<p>
+
+Passionate about Data Analysis, Python Automation, Power BI, SQL, Excel and creating modern web applications.
+
+</p>
+
+<div class="hero-btn">
+
+<a href="{{ url_for('static', filename='resume/Resume.pdf.pdf') }}"
+   class="btn1"
+   target="_blank"
+   download>
+    Download Resume
+</a>
+
+
+<a href="/projects" class="btn2">View Projects</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="{{ url_for('static',filename='images/profile.JPEG') }}">
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2>What I Do</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-chart-simple"></i>
+
+<h3>Power BI Dashboard</h3>
+
+<p>Interactive Business Dashboards</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>SQL Analysis</h3>
+
+<p>Data Cleaning & Reporting</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-brands fa-python"></i>
+
+<h3>Python Automation</h3>
+
+<p>Excel Automation & Flask Apps</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-file-excel"></i>
+
+<h3>Advanced Excel</h3>
+
+<p>Power Query • VBA • Dashboard</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="featured">
+
+<h2>Featured Projects</h2>
+
+<div class="project-grid">
+
+<div class="project">
+
+<h3>Sales Dashboard</h3>
+
+<p>Power BI Interactive Dashboard</p>
+
+<button>View</button>
+
+</div>
+
+<div class="project">
+
+<h3>Python Automation</h3>
+
+<p>Excel + Python Automation</p>
+
+<button>View</button>
+
+</div>
+
+<div class="project">
+
+<h3>Portfolio Website</h3>
+
+<p>Flask Based Portfolio</p>
+
+<button>View</button>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
