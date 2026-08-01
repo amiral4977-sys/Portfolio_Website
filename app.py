@@ -1,5 +1,8 @@
 print(">>> CORRECT APP.PY IS RUNNING <<<")
+
 from flask import Flask, render_template
+import webbrowser
+from threading import Timer
 
 app = Flask(__name__)
 
@@ -39,5 +42,11 @@ def certificates():
 def contact():
     return render_template("contact.html")
 
+
+def open_browser():
+    webbrowser.open("http://127.0.0.1:5000", new=0)
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    Timer(1, open_browser).start()
+    app.run(debug=True, use_reloader=False)
