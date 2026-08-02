@@ -118,3 +118,50 @@ searchInput.addEventListener("keypress", function(event) {
     }
 
 });
+
+// ================= Contact Form =================
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxnJCyg0iCxSB0n-penOXDPfOVIXOU57npn1pAb0rUhMWyiw7fWKxXO9Btb4_gJ6EIh/exec";
+
+    contactForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const status = document.getElementById("status");
+
+        fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            })
+        })
+
+        .then(() => {
+
+            status.innerHTML = "✅ Message Sent Successfully!";
+            status.style.color = "#00ff88";
+
+            contactForm.reset();
+
+        })
+
+        .catch(() => {
+
+            status.innerHTML = "❌ Failed to Send Message!";
+            status.style.color = "red";
+
+        });
+
+    });
+
+}
