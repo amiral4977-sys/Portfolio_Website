@@ -1,37 +1,223 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Analytics Dashboard{% endblock %}
 
 {% block content %}
 
-<section class="featured">
+<section class="dashboard">
 
-<h2>My Dashboard</h2>
+    <!-- Header -->
+    <div class="dashboard-header">
 
-<div class="project-grid">
+        <div class="header-left">
+            <h1>Analytics Dashboard</h1>
+            <p>Welcome back, <span>Amir Khan</span></p>
+        </div>
 
-<div class="project">
-<h3>Excel</h3>
-<p>95%</p>
-</div>
+        <div class="header-right">
+            <div class="status-card">
+                <h4>Status</h4>
+                <span class="online">● Available for Work</span>
+            </div>
+        </div>
 
-<div class="project">
-<h3>Power BI</h3>
-<p>90%</p>
-</div>
+    </div>
 
-<div class="project">
-<h3>SQL</h3>
-<p>85%</p>
-</div>
 
-<div class="project">
-<h3>Python</h3>
-<p>80%</p>
-</div>
+    <!-- KPI Cards -->
 
-</div>
+    <div class="kpi-grid">
+
+        <div class="kpi-card excel">
+
+            <div class="icon">
+                <i class="fa-solid fa-file-excel"></i>
+            </div>
+
+            <div class="info">
+                <h2>Excel</h2>
+                <h3>95%</h3>
+                <div class="progress">
+                    <div class="progress-fill excel-fill"></div>
+                </div>
+                <small>Advanced Reporting & Automation</small>
+            </div>
+
+        </div>
+
+
+        <div class="kpi-card powerbi">
+
+            <div class="icon">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <div class="info">
+                <h2>Power BI</h2>
+                <h3>90%</h3>
+
+                <div class="progress">
+                    <div class="progress-fill power-fill"></div>
+                </div>
+
+                <small>Interactive Dashboards</small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="kpi-card sql">
+
+            <div class="icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <div class="info">
+
+                <h2>SQL</h2>
+
+                <h3>85%</h3>
+
+                <div class="progress">
+                    <div class="progress-fill sql-fill"></div>
+                </div>
+
+                <small>Business Reporting</small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="kpi-card python">
+
+            <div class="icon">
+                <i class="fa-brands fa-python"></i>
+            </div>
+
+            <div class="info">
+
+                <h2>Python</h2>
+
+                <h3>80%</h3>
+
+                <div class="progress">
+                    <div class="progress-fill python-fill"></div>
+                </div>
+
+                <small>Automation Scripts</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Charts -->
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+
+            <div class="card-title">
+
+                <h2>Skill Distribution</h2>
+
+            </div>
+
+            <canvas id="skillChart"></canvas>
+
+        </div>
+
+
+
+        <div class="chart-card">
+
+            <div class="card-title">
+
+                <h2>Learning Progress</h2>
+
+            </div>
+
+            <canvas id="progressChart"></canvas>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Bottom Cards -->
+
+    <div class="bottom-grid">
+
+        <div class="bottom-card">
+
+            <h2>Core Technologies</h2>
+
+            <div class="tech-list">
+
+                <span>Excel</span>
+                <span>Power BI</span>
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Power Query</span>
+                <span>VBA</span>
+                <span>Google Sheets</span>
+                <span>Pandas</span>
+                <span>Git</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="bottom-card">
+
+            <h2>Career Summary</h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-box">
+                    <h1>4+</h1>
+                    <p>Years Experience</p>
+                </div>
+
+                <div class="summary-box">
+                    <h1>30+</h1>
+                    <p>Dashboards</p>
+                </div>
+
+                <div class="summary-box">
+                    <h1>50+</h1>
+                    <p>Automations</p>
+                </div>
+
+                <div class="summary-box">
+                    <h1>25+</h1>
+                    <p>Projects</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Dashboard JS -->
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 
 {% endblock %}
